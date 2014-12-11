@@ -17,8 +17,8 @@ def home(request):
 	c = {}
 	c.update(csrf(request))
 	if request.GET:
-		search = request.GET.get('search')
-		if search:
+		url = request.GET.get('url')
+		if url:
 			video = pafy.new(url)
 			streams = video.streams
 			return render_to_response('result.html',{'streams':streams,'video':video},context_instance=RequestContext(request))

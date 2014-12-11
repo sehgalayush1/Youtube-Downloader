@@ -34,8 +34,8 @@
 					<p>Offers URL redirection service with real-time link tracking.</p>
 				</div>
 				
-			<form class="form-horizontal" action = "" method = "POST">
- 				{% csrf_token %}
+			<form class="form-horizontal" action = "" method = "get">
+ 				<!-- {% csrf_token %} -->
 				<fieldset>
 
 						<div class="form-group">
@@ -45,18 +45,6 @@
 						    
 						  </div>
 						</div>
-						 <label class="col-md-4 control-label" for="costumurl">Enter the Costum Url</label>
-						  <div class="col-md-4">
-						    <div class="input-group">
-						      <span class="input-group-addon">http://pyurl.com/</span>
-						      <input id="costumurl" name="costumurl" class="form-control" placeholder="example" type="text" required="">
-						    </div>
-						    	{% if a %}
-						    	<br>
-								<div class="alert alert-danger" role="alert">
-							  	Error: This name has already been taken.
-							</div>
-							{% endif %}
 						  <label class="col-md-4 control-label" for="submitButton"></label>
 						  <div class="col-md-4">
 						  <br>

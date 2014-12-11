@@ -60,7 +60,7 @@
 						  	<p>Author: {{ video.author }}</p>
 						  	<p>Length: {{ video.length }}</p>
 						  	{% for s in streams %}
-						  	<button class="btn btn-primary"><a href="{{ s.url }}">{{ s.resolution }}</button><br>
+						  	<a href="{{ s.url }}"><button class="btn btn-primary">{{ s.resolution }}</button></a><br><br>
 						  	{% endfor %}
 							</center>
 						  </div>
