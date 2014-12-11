@@ -11,7 +11,6 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.template import Context
 import random,string
-from djangoaudio.models import * 
 import pafy
 
 def home(request):
@@ -22,5 +21,5 @@ def home(request):
 		if search:
 			video = pafy.new(url)
 			streams = video.streams
-			return render_to_response('result.html',{'s':streams,'video':video},context_instance=RequestContext(request))
+			return render_to_response('result.html',{'streams':streams,'video':video},context_instance=RequestContext(request))
 	return render_to_response('index.html')

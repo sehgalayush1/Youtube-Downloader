@@ -46,28 +46,33 @@
 		
 		<div id="portfolio" class="work">
 			<div class="container">
-				<div class="work-info">
+				<!-- <div class="work-info">
 					<h3> Unleash the<span> power of the link</span> </h3>
 					<p>Offers URL redirection service with real-time link tracking.</p>
-				</div>
-				{% if shortUrl %}
-						  <h3>New shortened url for your original link </h3><br/>
+				</div> -->
+				{% if video %}
+						  <h3>Hurraah We have captured your video  </h3><br/>
 						  						  <div class="col-md-4"></div>
 						  <div class="col-md-4">
 						  <center>
-						  <input id="url" name="url" type="text" class="form-control input-md" size="50" name= "url"   value="{{ shortUrl }}" >						    
-					<!-- 	  <button id="button"  name="button" class="btn btn-primary" onclick="func()">Copy</button> -->
+						  	<p>Title: {{ video.title }}</p>
+						  	<p>ViewCount: {{ video.viewcount }}</p>
+						  	<p>Author: {{ video.author }}</p>
+						  	<p>Length: {{ video.length }}</p>
+						  	{% for s in streams %}
+						  	<button class="btn btn-primary"><a href="{{ s.url }}">{{ s.resolution }}</button><br>
+						  	{% endfor %}
 							</center>
 						  </div>
 					<br>
 					{% endif %}
-	{% if a %}
+	<!-- {% if a %}
 	<div class="alert alert-danger" role="alert">
   	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
   <span class="sr-only">Error:</span>
   {{ a }}
 </div>
-{% endif %}
+{% endif %} -->
 				
 			</div>
 		</div>
