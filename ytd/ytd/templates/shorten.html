@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>pyUrl Shortner</title>
+		<link href="/static/css/style.css" rel="stylesheet" //>
+		<link href="/static/css/bootstrap.css" rel="stylesheet"/>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+		<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/modernizr.custom.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<script type="text/javascript" src="/static/js/move-top.js"></script>
+		<script type="text/javascript" src="/static/js/easing.js"></script>
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="home" class="head-bg">
+			<div class="header">
+				<div class="container">
+					<div class="header-logo">
+						<a href="/"><h2 style="font:Verdana">PyUrl Shortner</h2></a>
+					</div>
+					<div class="top-nav">
+						<span class="menu">MENU</span>
+							 <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.nav1" ).slideToggle( 300, function() {
+								  });
+								 });
+							</script>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			
+		
+		<div id="portfolio" class="work">
+			<div class="container">
+				<div class="work-info">
+					<h3> Unleash the<span> power of the link</span> </h3>
+					<p>Offers URL redirection service with real-time link tracking.</p>
+				</div>
+				{% if shortUrl %}
+						  <h3>New shortened url for your original link </h3><br/>
+						  						  <div class="col-md-4"></div>
+						  <div class="col-md-4">
+						  <center>
+						  <input id="url" name="url" type="text" class="form-control input-md" size="50" name= "url"   value="{{ shortUrl }}" >						    
+					<!-- 	  <button id="button"  name="button" class="btn btn-primary" onclick="func()">Copy</button> -->
+							</center>
+						  </div>
+					<br>
+					{% endif %}
+	{% if a %}
+	<div class="alert alert-danger" role="alert">
+  	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  {{ a }}
+</div>
+{% endif %}
+				
+			</div>
+		</div>
+		
+		<div class="address">
+			<div class="container">
+				<ul>
+					<li><span>Developed By: </span>:<a href="http://www.deshraj.in">Deshraj Yadav</a></li>
+				</ul>
+			</div>
+		</div>
+		
+	</body>
+</html>

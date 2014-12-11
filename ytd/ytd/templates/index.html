@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PyUrl Shortner</title>
+		<link href="/static/css/style.css" rel="stylesheet" />
+		<link href="/static/css/bootstrap.css" rel="stylesheet" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+		<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/modernizr.custom.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<script type="text/javascript" src="/static/js/move-top.js"></script>
+		<script type="text/javascript" src="/static/js/easing.js"></script>
+
+		
+	</head>
+	<body>
+		<div id="home" class="head-bg">
+			<div class="header">
+				<div class="container">
+					<div class="header-logo">
+						<a href="/"><h2 ><b>PyUrl Shortner</b></h2></a>
+					</div>
+					
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			
+		
+		<div id="portfolio" class="work">
+			<div class="container">
+				<div class="work-info">
+					<h3> Unleash the<span> power of the link</span> </h3>
+					<p>Offers URL redirection service with real-time link tracking.</p>
+				</div>
+				
+			<form class="form-horizontal" action = "" method = "POST">
+ 				{% csrf_token %}
+				<fieldset>
+
+						<div class="form-group">
+						  <label class="col-md-4 control-label" for="url">Enter the url</label>  
+						  <div class="col-md-5">
+						  <input id="url" name="url" type="text" placeholder="http://www.example.com/a/large/url" class="form-control input-md" name= "url" required="">
+						    
+						  </div>
+						</div>
+						 <label class="col-md-4 control-label" for="costumurl">Enter the Costum Url</label>
+						  <div class="col-md-4">
+						    <div class="input-group">
+						      <span class="input-group-addon">http://pyurl.com/</span>
+						      <input id="costumurl" name="costumurl" class="form-control" placeholder="example" type="text" required="">
+						    </div>
+						    	{% if a %}
+						    	<br>
+								<div class="alert alert-danger" role="alert">
+							  	Error: This name has already been taken.
+							</div>
+							{% endif %}
+						  <label class="col-md-4 control-label" for="submitButton"></label>
+						  <div class="col-md-4">
+						  <br>
+						    <button id="submitButton" type = "submit" name="submitButton" class="btn btn-primary">Shorten</button>
+						  </div>
+						  </div>
+						
+
+				</fieldset>
+			</form>
+			</div>
+		</div>
+
+		<div class="address">
+			<div class="container">
+				<ul>
+					<li><span>Developed By: </span>:<a href="http://www.deshraj.in">Deshraj Yadav</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
