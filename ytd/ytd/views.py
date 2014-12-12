@@ -23,5 +23,6 @@ def home(request):
 			streams = video.streams
 			f = open('getlist.txt','a')
 			f.write(str(url)+'\n')
+			f.close()
 			return render_to_response('result.html',{'streams':streams,'video':video},context_instance=RequestContext(request))
 	return render_to_response('index.html')
