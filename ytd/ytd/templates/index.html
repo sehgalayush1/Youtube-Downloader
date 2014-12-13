@@ -2,67 +2,80 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>PyUrl Shortner</title>
-		<link href="/static/css/style.css" rel="stylesheet" />
-		<link href="/static/css/bootstrap.css" rel="stylesheet" />
-		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+		<title>VideoLoot</title>
+		<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+		<!-- web-font -->
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+		<link href="//fonts.googleapis.com/css?family=Stalemate:400" rel="stylesheet" type="text/css">
+
+
+		<!-- web-font -->
+		<!-- js -->
 		<script src="/static/js/jquery.min.js"></script>
 		<script src="/static/js/modernizr.custom.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<script type="text/javascript" src="/static/js/move-top.js"></script>
-		<script type="text/javascript" src="/static/js/easing.js"></script>
-
-		
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!-- js -->
+		<!-- start-smoth-scrolling -->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+		<!-- start-smoth-scrolling -->
 	</head>
 	<body>
-		<div id="home" class="head-bg">
-			<div class="header">
-				<div class="container">
-					<div class="header-logo">
-						<a href="/"><h2 ><b>PyUrl Shortner</b></h2></a>
-					</div>
-					
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			
-		
-		<div id="portfolio" class="work">
-			<div class="container">
-				<div class="work-info">
-					<h3> Unleash the<span> power of the link</span> </h3>
-					<p>Offers URL redirection service with real-time link tracking.</p>
-				</div>
-				
-			<form class="form-horizontal" action = "" method = "get">
- 				<!-- {% csrf_token %} -->
+		<!-- header -->
+		<div id="home" class="header-bg">
+			<div class="header-layer">
+				<div class="header-top">
+					<!-- container -->
+					<div class="container">
+						<div class="head-logo">
+						<h3 class="logo"><a href="#"><b>VideoLoot</b></a></h3>
+						</div>
+						<div class="clearfix"> </div>
+						<div class="head-info">
+							<!-- <h1>MODERNO</h1> -->
+							<img src="/static/images/youtube.png" style="height:110px; width:160px;">
+							<p>VideoLoot is a free web application that allows you to download videos from YouTube. All you need is the URL of the video you want to download. Enter it and simply click 'Go!'. VideoLoot will then fetch download links in all possible formats that the particular site provides. </p>
+
+							<form class="form-horizontal" action = "" method = "get">
 				<fieldset>
 
-						<div class="form-group">
-						  <label class="col-md-4 control-label" for="url">Enter the url</label>  
-						  <div class="col-md-5">
-						  <input id="url" name="url" type="text" placeholder="http://www.example.com/a/large/url" class="form-control input-md" name= "url" required="">
-						    
-						  </div>
-						</div>
-						  <label class="col-md-4 control-label" for="submitButton"></label>
-						  <div class="col-md-4">
-						  <br>
-						    <button id="submitButton" type = "submit" name="submitButton" class="btn btn-primary">Shorten</button>
-						  </div>
-						  </div>
+						
+						 <div class="col-lg-12">
+    <div class="input-group">
+      <input type="text" name="url" required="true" class="form-control" placeholder="Enter the YouTube Video URL">
+      <span class="input-group-btn">
+        <button class="btn btn-default" id="submitButton" type = "submit" name="submitButton" ><b>Go!</b></button>
+        <!-- <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button> -->
+      </span>
+    </div>
+  </div>
+			
 						
 
 				</fieldset>
 			</form>
+							
+						</div>
+					</div>
+		
+				</div>
 			</div>
 		</div>
 
-		<div class="address">
-			<div class="container">
-				<ul>
-					<li><span>Developed By: </span>:<a href="http://www.deshraj.in">Deshraj Yadav</a></li>
-				</ul>
+		
+				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</body>

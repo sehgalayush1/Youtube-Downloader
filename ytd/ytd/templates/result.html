@@ -2,18 +2,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>pyUrl Shortner</title>
-		<link href="/static/css/style.css" rel="stylesheet" //>
-		<link href="/static/css/bootstrap.css" rel="stylesheet"/>
-		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+		<title>VideoLoot</title>
+		<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+		<!-- web-font -->
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+		<link href="//fonts.googleapis.com/css?family=Stalemate:400" rel="stylesheet" type="text/css">
+
+
+		<!-- web-font -->
+		<!-- js -->
 		<script src="/static/js/jquery.min.js"></script>
 		<script src="/static/js/modernizr.custom.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!-- js -->
+		<!-- start-smoth-scrolling -->
 		<script type="text/javascript" src="/static/js/move-top.js"></script>
 		<script type="text/javascript" src="/static/js/easing.js"></script>
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
@@ -22,61 +30,79 @@
 				});
 			});
 		</script>
+		<!-- start-smoth-scrolling -->
 	</head>
-	<body>
-		<div id="home" class="head-bg">
-			<div class="header">
-				<div class="container">
-					<div class="header-logo">
-						<a href="/"><h2 style="font:Verdana">PyUrl Shortner</h2></a>
-					</div>
-					<div class="top-nav">
-						<span class="menu">MENU</span>
-							 <script>
-							   $( "span.menu" ).click(function() {
-								 $( "ul.nav1" ).slideToggle( 300, function() {
-								  });
-								 });
-							</script>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			
-		
-		<div id="portfolio" class="work">
-			<div class="container">
-				<!-- <div class="work-info">
-					<h3> Unleash the<span> power of the link</span> </h3>
-					<p>Offers URL redirection service with real-time link tracking.</p>
-				</div> -->
-				{% if video %}
-						  <h3>Hurraah We have captured your video  </h3><br/>
-						  						  <div class="col-md-4"></div>
-						  <div class="col-md-4">
-						  <center>
-						  	<p>Title: {{ video.title }}</p>
-						  	<p>ViewCount: {{ video.viewcount }}</p>
-						  	<p>Author: {{ video.author }}</p>
-						  	<p>Length: {{ video.length }}</p>
-						  	{% for s in streams %}
-						  	<a href="{{ s.url }}"><button class="btn btn-primary">{{ s.resolution }}</button></a><br><br>
-						  	{% endfor %}
-							</center>
+	<body class="reslt">
+		<!-- header -->
+		<div id="home" class="">
+			<div class="header-layer-result">
+				<div class="header-top">
+					<!-- container -->
+					<div class="container">
+						<div class="head-logo">
+						<h3 class="logo"><a href="/"><b>VideoLoot</b></a></h3>
+						</div>
+						<div class="clearfix"> </div>
+						<div class=" col-md-12 head-info-result">
+							<h2>Hurrah !!</h2>
+							<h3>We have captured your Video</h3>
+							
+							<div class="col-md-12">
+							<div class="col-md-3">
+								<img src="{{ video.thumb }}"  height=110 width=160/>
+
+							</div>
+							<div class="col-md-8 details">
+						  
+						  	<div class="col-md-3 details-bold">Title:</div>
+						  	<div class="col-md-9">{{ video.title }}</div>
+
+						  	<div class="col-md-3 details-bold">Author:</div>
+						  	<div class="col-md-9">{{ video.author }}</div>
+
+						  	<div class="col-md-3 details-bold">Length:</div>
+						  	<div class="col-md-9">{{ video.length }} seconds</div>
+
+						  	<div class="col-md-3 details-bold">ViewCount:</div>
+						  	<div class="col-md-9">{{ video.viewcount }} bytes</div>
+						  	 <br><br>
+						  	
 						  </div>
-					<br>
-					{% endif %}
-				
+						   <div class="col-md-1"></div>
+						   <br><br><br>
+		</div>
+		</div>
+		<div class="col-md-12 head-info-result">
+			<div class="gr">
+				{% for s in streams %}
+					<div class="col-md-2">
+						 <div class="section group">	     
+  						<!-- <div class="grid_1_of_4 images_1_of_4" id="{{ m.bookId }}" onclick="location.href='/book/{{ m.urlId }}';">
+						<a href="{{ s.url }}"><img src=""  height=180 width=230/></a>
+            			 <h3 class="resolution">{{ s.resolution }}</h3>
+            			 </div> -->
+            			 <a href="{{ s.url }}" download>
+            			 <button type="button" class="btn btn-success res-btn">{{ s.resolution }}</button>
+            			 </a>
+            		</div> 
+
+            		</div>  
+           	{% endfor %}
+            </div>		
+           </div>
+
+					</div>
+							
+						</div>
+					</div>
+		
+				</div>
+			<!-- </div>
+		</div> -->
+
+		
+				<div class="clearfix"> </div>
 			</div>
 		</div>
-		
-		<div class="address">
-			<div class="container">
-				<ul>
-					<li><span>Developed By: </span>:<a href="http://www.deshraj.in">Deshraj Yadav</a></li>
-				</ul>
-			</div>
-		</div>
-		
 	</body>
 </html>
