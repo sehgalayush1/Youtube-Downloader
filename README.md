@@ -8,7 +8,7 @@ Installation Instructions
 
 `git clone https://github.com/DESHRAJ/Youtube-Downloader.git ytd`
 
-`cd ytd`
+`cd ytd/ytd`
 
 `virtualenv env`
 
