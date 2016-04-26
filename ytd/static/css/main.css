@@ -1,0 +1,30 @@
+html { 
+  	background: url(../img/bg1.jpeg) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+#sub {
+	font-size: 18px;
+	padding-left: 8%;
+}
+#form {
+	margin-left: 5%;
+	margin-top: 20%;
+}
+input {
+	background-color: #fff !important;
+	border-radius: 5px !important;
+	font-size: 1.1em !important;
+	padding-left: 1% !important;
+	border-bottom: none !important;
+}
+input:focus {
+	box-shadow: 1px 1px 1px 1px #FDB600 !important;
+} 
+button {
+	width: 101%;
+	background-color: #FDB600 !important;
+}

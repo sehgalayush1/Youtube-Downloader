@@ -1,9 +1,10 @@
 # Django settings for ytd project.
 import os
 import pafy
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+PAFY_BACKEND = "internal"
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
