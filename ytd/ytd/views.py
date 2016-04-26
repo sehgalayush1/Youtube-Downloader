@@ -12,6 +12,8 @@ from django.template.loader import get_template
 from django.template import Context
 import random, string
 import pafy
+from django.core.validators import URLValidator
+from django.core.exceptions import ValidationError
 
 def home(request):
 	c = {}
@@ -19,22 +21,28 @@ def home(request):
 	if request.GET:
 		url = request.GET.get('url')
 		if url:
-			video = pafy.new(url)
-			streams = video.streams
-			f = open('getlist.txt','a')
-			f.write(str(url)+'\n')
-			f.close()
-			print "\n \n \n############ The details of the Video are as follows: ########### \n"
-			print "Title : %s\n"%(video.title)
-			print "Author : %s\n"%(video.author)
-			print "Length : %s seconds\n"%(video.length)
-			print "No. of views : %s \n"%(video.viewcount)
-			for s in streams:
-				print " Link to Video : %s"%(s.url)
-				print 
-				print
-			print "#################################################################\n \n \n"
-			return render_to_response('result.html')
+			validate = URLValidator()
+			try:
+				validate(url)
+				video = pafy.new(url)
+				streams = video.streams
+				f = open('getlist.txt','a')
+				f.write(str(url)+'\n')
+				f.close()
+				print "\n \n \n############ The details of the Video are as follows: ########### \n"
+				print "Title : %s\n"%(video.title)
+				print "Author : %s\n"%(video.author)
+				print "Length : %s seconds\n"%(video.length)
+				print "No. of views : %s \n"%(video.viewcount)
+				for s in streams:
+					print " Link to Video : %s"%(s.url)
+					print 
+					print
+				print "#################################################################\n \n \n"
+				return render_to_response('result.html')
+			except ValidationError:
+			    return render(request, 'index.html', {'error':'Please enter a valid url!'})
+			
 	return render_to_response('index.html')
 
 def analytics(request):

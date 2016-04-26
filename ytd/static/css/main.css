@@ -28,3 +28,6 @@ button {
 	width: 101%;
 	background-color: #FDB600 !important;
 }
+#error {
+	color: red;
+}

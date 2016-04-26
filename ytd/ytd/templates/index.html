@@ -21,6 +21,9 @@
 					<form class="form-horizontal" action = "" method = "get" id="form">
 						<input type="text" name="url" required="true" placeholder="Enter the YouTube Video URL"><br>
 						<button class="btn" type = "submit" name="submitButton" >Go!</button>
+						{% if error %}
+							<p id="error" class="center">{{ error }}</p>
+						{% endif %}
 					</form>
 				</div>
 			</div>
