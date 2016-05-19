@@ -16,10 +16,11 @@ html {
 }
 input {
 	background-color: #fff !important;
-	border-radius: 5px !important;
+	border-radius: 2px !important;
 	font-size: 1.1em !important;
 	padding-left: 1% !important;
 	border-bottom: none !important;
+	height: 50px !important;
 }
 input:focus {
 	box-shadow: 1px 1px 1px 1px #FDB600 !important;
@@ -27,6 +28,7 @@ input:focus {
 button {
 	width: 101%;
 	background-color: #FDB600 !important;
+	height: 50px !important;
 }
 #error {
 	color: red;

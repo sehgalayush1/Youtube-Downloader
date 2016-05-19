@@ -42,7 +42,8 @@ def home(request):
 				return render_to_response('result.html')
 			except ValidationError:
 			    return render(request, 'index.html', {'error':'Please enter a valid url!'})
-			
+		else:
+			return render(request, 'index.html', {'error':'Please enter a url!'})	
 	return render_to_response('index.html')
 
 def analytics(request):

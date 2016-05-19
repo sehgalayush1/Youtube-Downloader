@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Result</title>
-</head>
-<body>
-<h2>Working at Backend Part. See the results on Console. </h2>
-<h2>Thankyou :)</h2>
-</body>
+	<head>
+		<title>KeepVids</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/main2.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}">
+	</head>
+	<body>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col s8 offset-s2">
+					<div class="card z-depth-4" id="box">
+						<h3 class="center">Backend Working!</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+		<script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+	</body>
 </html>
